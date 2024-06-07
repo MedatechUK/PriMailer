@@ -71,15 +71,16 @@ we still need to put something in this form to get to its sub form
 4. Go to sub form `Procedure Messages`. Here we are going to load our HTML templates.
 Here we create records and name them correspondingly with our HTML templates names 
 - Very important is to leave the first line !!! EMPTY !!! because:
-"the blank step is required to tell the sendmail command that it's using the temp file as the body, rather than as an attachment"
-otherwise our templates will not be shown as actual email format page, it would be considered as attachment(pdf, docx)
+`the blank step is required to tell the sendmail command that it's using the temp file as the body, rather than as an 
+attachment` otherwise our templates will not be shown as actual email format page, it would be considered as 
+attachment(pdf, docx)
 ![loading htmls](./images/loading_htmls.png)
        
 5. Go to sub form `Procedure Messages(content)` for each of HTML and insert our HTMLs accordingly.
    - Make sure your HTML tags and it's contents are all aligned by left side before you paste it, 
-there should be no white spaces or new line symbols.
+   there should be no white spaces or new line symbols.
    - To do that go to where your HTML was written(VScode in our case) --> open HTML file --> press "ctrl + H"
-and make 3 steps to remove spare symbols:
+   and make 3 steps to remove spare symbols:
      - replace all `\n[ ]+` with ` `
      - replace all `<` with `\n<`
      - replace all `\n\n` with `\n`
@@ -88,28 +89,27 @@ and make 3 steps to remove spare symbols:
 
     
 ## Step_4: Creating Procedure for Sending Emails
+#### Getting values we are going to include in our HTML templates:
 
-1. Getting values we are going to include in our HTML templates:
-
-2. Go to procedure generator, and create procedure which will select all dynamic data from DB and send it to customer
-   - (`ZTMD_MAILTEST` in our case)
+1. ***Go to procedure generator***, and create procedure which will select all dynamic data from DB and send it to customer
+(`ZTMD_MAILTEST` in our case)
 ![send emails procedure](./images/procedure_sendmails.png)
         
-3. Go to sub form `Procedure Steps` and create a SQLI entity
+2. ***Go to sub form*** `Procedure Steps` and create a SQLI entity
 ![SQLI_entity](./images/SQLI_emails.png)
         
-4. Go to sub form `Step Query` pres `F6` and open code editor:
+3. ***Go to sub form*** `Step Query` pres `F6` and open code editor:
 Okay, Lets split this code in few sections for easier understanding:
 
-5. SELECT statement
-![select statement](./images/SELECT.png)
+   1. SELECT statement.
 Just selecting fields that we spoke about earlier as of dynamic data.
+![select statement](./images/SELECT.png)
         
-6. Declaring Cursor and looping through our records in order to assign result values to so-called variables
+   2. Declaring Cursor and looping through our records in order to assign result values to so-called variables
 for each record
 ![Fetching cursor into corresponding variables](./images/fetching_cursor.png)
 
-7. Selecting these variables into new variables(parameters) used as a reserved variables in procedures.
+   3. Selecting these variables into new variables(parameters) used as a reserved variables in procedures.
 At this point we could have fetched our cursor straight into :PAR variables at the first place.
 ![Selecting previous variables into :PAR variables](./images/PAR_variables.png)
 
