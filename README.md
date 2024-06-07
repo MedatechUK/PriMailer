@@ -115,12 +115,11 @@ Okay, Lets split this code in few sections for easier understanding:
    
       ![select statement](./images/SELECT.png)
         
-   2. Declaring Cursor and looping through our records in order to assign result values to so-called variables
-   for each record
+   2. Declaring Cursor and fetching selected fields into the so-called variables
    
       ![Fetching cursor into corresponding variables](./images/fetching_cursor.png)
 
-   3. Selecting these variables into new variables(parameters) used as a reserved variables in procedures.
+   3. Selecting these variables into `Parameters` used as a reserved variables in procedures.
    At this point we could have fetched our cursor straight into :PAR variables at the first place.
    
       ![Selecting previous variables into :PAR variables](./images/PAR_variables.png)
