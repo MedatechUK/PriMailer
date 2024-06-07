@@ -89,27 +89,27 @@ and make 3 steps to remove spare symbols:
     
 ## Step_4: Creating Procedure for Sending Emails
 
-- 1. Getting values we are going to include in our HTML templates:
+1. Getting values we are going to include in our HTML templates:
 
-- 2. Go to procedure generator, and create procedure which will select all dynamic data from DB and send it to customer
-     - (ZTMD_MAILTEST in our case)
+2. Go to procedure generator, and create procedure which will select all dynamic data from DB and send it to customer
+   - (ZTMD_MAILTEST in our case)
 ![send emails procedure](./procedure_sendmails.png)
         
-- 3. Go to sub form "Procedure Steps" and create a SQLI entity
+3. Go to sub form "Procedure Steps" and create a SQLI entity
 ![SQLI_entity](./SQLI_emails.png)
         
-- 4. Go to sub form "Step Query" pres F6 and open code editor:
+4. Go to sub form "Step Query" pres F6 and open code editor:
 Okay, Lets split this code in few sections for easier understanding:
 
-- 5. SELECT statement
+5. SELECT statement
 ![select statement](./SELECT.png)
 Just selecting fields that we spoke about earlier as of dynamic data.
         
-- 6. Declaring Cursor and looping through our records in order to assign result values to so-called variables
+6. Declaring Cursor and looping through our records in order to assign result values to so-called variables
 for each of lines in response table
 ![Fetching cursor into corresponding variables](./fetching_cursor.png)
 
-- 7. Selecting these variables into new variables(parameters) used as a reserved variables in procedures.
+7. Selecting these variables into new variables(parameters) used as a reserved variables in procedures.
 At this point we could have fetched our cursor straight into :PAR variables at the first place.
 ![Selecting previous variables into :PAR variables](./PAR_variables.png)
 
