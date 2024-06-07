@@ -92,13 +92,13 @@ and make 3 steps to remove spare symbols:
 1. Getting values we are going to include in our HTML templates:
 
 2. Go to procedure generator, and create procedure which will select all dynamic data from DB and send it to customer
-   - (ZTMD_MAILTEST in our case)
+   - (`ZTMD_MAILTEST` in our case)
 ![send emails procedure](./procedure_sendmails.png)
         
-3. Go to sub form "Procedure Steps" and create a SQLI entity
+3. Go to sub form `Procedure Steps` and create a SQLI entity
 ![SQLI_entity](./SQLI_emails.png)
         
-4. Go to sub form "Step Query" pres F6 and open code editor:
+4. Go to sub form `Step Query` pres `F6` and open code editor:
 Okay, Lets split this code in few sections for easier understanding:
 
 5. SELECT statement
@@ -116,16 +116,16 @@ At this point we could have fetched our cursor straight into :PAR variables at t
 
  - ### Step_4.1: Email-Sending steps:
 
- 1. Declaring few self-explanatory variables such as :_REPLYTOEMAIL, :_Subject, :sendto
+ 1. Declaring few self-explanatory variables such as `:_REPLYTOEMAIL`, `:_Subject`, `:sendto`
 ![Setting To/From emails](./email_variables.png)
         
  2. Choosing HTML template by MSG number we defined earlier (`Step_3: Creating Procedure for holding HTMLS[4]`)
-    - As we defined  MSG number against each of our HTML we just take this number and assign it to a :ENTMSG variable,
-    also we assign (:ENT = 'ZTMD_EMAILS') name of procedure to entity variable and 
-    :ENTTYPE = 'P' as Procedure type for our ZTMD_EMAILS procedure.
+    - As we defined  MSG number against each of our HTML we just take this number and assign it to a `:ENTMSG` variable,
+    also we assign `:ENT = 'ZTMD_EMAILS'` name of procedure to entity variable and 
+    `:ENTTYPE = 'P'` as Procedure type for our `ZTMD_EMAILS` procedure.
     ![Declaring entity variables](./Entity_vars.png)
 
- 3. Creating temporary file.html and assign it to :TMPFILE 
+ 3. Creating temporary file`.html` and assign it to `:TMPFILE` 
  (`SELECT STRCAT(SQL.TMPFILE , '.html') INTO :TMPFILE FROM DUMMY`)
     - `#INCLUDE MAILBOX/ZTMD_BUF1` this line is reading our :TMPFILE.html 
     looking for every parameter(`<P>`) in it.
