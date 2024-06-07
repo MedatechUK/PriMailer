@@ -69,8 +69,8 @@ we still need to put something in this form to get to its sub form
 ![Comment string](./images/Comment_string_for_SQLI.png)
 
 4. Go to sub form `Procedure Messages`. Here we are going to load our HTML templates.
-Here we create records and name them correspondingly with our HTML templates names 
-- Very important is to leave the first line !!! EMPTY !!! because:
+Here we create records and name them correspondingly with our HTML templates names.
+Very important is to leave the first line !!! EMPTY !!! because:
 `the blank step is required to tell the sendmail command that it's using the temp file as the body, rather than as an 
 attachment` otherwise our templates will not be shown as actual email format page, it would be considered as 
 attachment(pdf, docx)
