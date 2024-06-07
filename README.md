@@ -12,8 +12,8 @@ In our case there are 3 types for 3 statuses of online orders places by customer
 - `Shipped`
 
 ***In order to create HTML template we are going to need few things which each of templates consists of:***
-- Static data(text) which most likely is the same from template to template.
-- Dynamic data(name/order number/order date) which we SELECT from client's Database.
+- Static data: just a text which is written once for each template and doesn't get to be changed.
+- Dynamic data(name/order number/order date) which is SELECTed from client's Database.
 - Static images such as company logo which stays the same on each of templates.
 - Dynamic images such as order statuses.
 
