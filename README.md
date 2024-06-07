@@ -56,33 +56,33 @@ swap this data for parameters(variables) to which we assign SELECTed fields from
 ## Step_3: Creating Procedure for holding HTMLS
 
 1. So, go to procedure generator, and create procedure which only purpose will be to store our HTMLs
-in our case it's called ZTMD_EMAILS with "Templates" description 
+in our case it's called `ZTMD_EMAILS` with `Templates` description 
 ![creating procedure for holding HTML templates](./procedure_template.png)
 
-2. Go to sublevel form "Procedure Steps" and create a SQLI entity
+2. Go to sublevel form `Procedure Steps` and create a `SQLI` entity
 ![Creatinmg SQLIentity](./SQLIentity.png)
 
-3. Go to sub form "Step Query" and create just 1 line with comments tags (/* */)
+3. Go to sub form `Step Query` and create just 1 line with comments tags (/* */)
 the reason we are doing that is to get to the procedure messages which is the sub form 
-to SQLI entity only! But beacause we don't need any SQL statements here, we leave it as a comment string as
+to `SQLI` entity only! But because we don't need any SQL statements here, we leave it as a comment string as
 we still need to put something in this form to get to its sub form
 ![Comment string](./Comment_string_for_SQLI.png)
 
-4. Go to sub form "Procedure Messages". Here we are going to load our HTML templates.
+4. Go to sub form `Procedure Messages`. Here we are going to load our HTML templates.
 Here we create records and name them correspondingly with our HTML templates names 
 - Very important is to leave the first line !!! EMPTY !!! because:
 "the blank step is required to tell the sendmail command that it's using the temp file as the body, rather than as an attachment"
 otherwise our templates will not be shown as actual email format page, it would be considered as attachment(pdf, docx)
 ![loading htmls](./loading_htmls.png)
        
-5. Go to sub form "Procedure Messages (content)" for each of HTML and insert our HTMLs accordingly.
+5. Go to sub form `Procedure Messages(content)` for each of HTML and insert our HTMLs accordingly.
    - Make sure your HTML tags and it's contents are all aligned by left side before you paste it, 
 there should be no white spaces or new line symbols.
    - To do that go to where your HTML was written(VScode in our case) --> open HTML file --> press "ctrl + H"
 and make 3 steps to remove spare symbols:
-     - replace all "\n[ ]+" with ""
-     - replace all "<" with "\n<"
-     - replace all "\n\n" with "\n"
+     - replace all `\n[ ]+` with ` `
+     - replace all `<` with `\n<`
+     - replace all `\n\n` with `\n`
 
 
 
