@@ -106,7 +106,7 @@ Okay, Lets split this code in few sections for easier understanding:
 Just selecting fields that we spoke about earlier as of dynamic data.
         
 6. Declaring Cursor and looping through our records in order to assign result values to so-called variables
-for each of lines in response table
+for each record
 ![Fetching cursor into corresponding variables](./fetching_cursor.png)
 
 7. Selecting these variables into new variables(parameters) used as a reserved variables in procedures.
